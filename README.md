@@ -26,7 +26,7 @@ For Software Github, you all have been added as collaborators, but to actually p
 
 2. <ins>git pull origin master</ins> - This is the same as git pull, however despite which branch you are on, you will always get all the files on the master branch.
 
-3.<ins>git add <file></ins> - This adds files. Adding is the first stage you need to do to push your files. "<file>" is the file that you want to get ready to push to the repo. 
+3. <ins>git add <file></ins> - This adds files. Adding is the first stage you need to do to push your files. "<file>" is the file that you want to get ready to push to the repo. 
 
 4. <ins>git commit -m <text></ins> - This will commit your changes and this the final step need to do. "<text>" is where you will type some text for your commit message. The commit message is where you explain what you are commiting.
 Example: You want to commit a file where you wrote software to control the robot with the joy stick. The file is called control.java. Your command line prompt would be "git add control.java". This adds the file that you just worked on. Now you are ready to push this file. Next step is to type "git commit -m "Added file to control the robot with the joystick."". Please note: I have added quotes on the commit message. THESE QUOTES ARE ABSOLUTELY NECCESSARY. You are typing text as a commit message, so it needs to be wrapped in quotes.
