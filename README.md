@@ -49,6 +49,18 @@ Example: You want to commit a file where you wrote software to control the robot
 
 3. <ins>touch</ins> - Creates a file of the name specified
 
+4. <ins>pwd></ins> - Tells the current path you are on
+
+# Markdown (md) tools
+
+This is a readme.md file. The ".md" file extension stands for markdown, a type of text that you can write. Here are a few commands to use with markdown text.
+
+1. <ins>"#"</ins> - This hash symbol marks a header. Notice how this readme had bolded headers. That is made with this tag. There are 5 different sizes of titles all the way from the largest title (one hash "#") to the smallest title (5 hashes "#####"). 
+
+2. <ins>"<ins></ins>"</ins> - This underlines the text specified inside the brackets. You would use it like this: <ins>"<ins>This is an underlined text!</ins>"</ins>
+
+3. <ins>"** or __"</ins> - The asterisk or the underscore marks can be used to bold a word. You need to place 2 of each symbol at the start and beginning of the word you wish to underline.
+
 # Meeting Notes
 
 We should keep software meeting note logs in this readme.md file. It will be a good show to the judges to show our organization as a team and it will serve as a nice way to keep track of our progress here as well.
