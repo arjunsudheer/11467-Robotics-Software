@@ -59,7 +59,7 @@ This is a readme.md file. The ".md" file extension stands for markdown, a type o
 
 2. <ins>"<ins>"</ins> - This underlines the text specified inside the brackets. For the closing bracket at the end, you would need a forward slash "/" before the "lns" command.
 
-3. <ins>"** or __"</ins> - The asterisk or the underscore marks can be used to bold a word. You need to place **2 of each symbol** at the __start and beginning of the word you wish to underline__. 
+3. <ins>"** or __"</ins> - The asterisk or the underscore marks can be used to bold a word. You need to place **2 of each symbol** at the __start and beginning of the word you wish to bold__. 
 
 # Meeting Notes
 
