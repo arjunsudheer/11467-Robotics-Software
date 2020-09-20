@@ -57,9 +57,9 @@ This is a readme.md file. The ".md" file extension stands for markdown, a type o
 
 1. <ins>"#"</ins> - This hash symbol marks a header. Notice how this readme had bolded headers. That is made with this tag. There are 5 different sizes of titles all the way from the largest title (one hash "#") to the smallest title (5 hashes "#####"). 
 
-2. <ins>"<ins></ins>"</ins> - This underlines the text specified inside the brackets. You would use it like this: <ins>"<ins>This is an underlined text!</ins>"</ins>
+2. <ins>"<ins>"</ins> - This underlines the text specified inside the brackets. For the closing bracket at the end, you would need a forward slash "/" before the "lns" command.
 
-3. <ins>"** or __"</ins> - The asterisk or the underscore marks can be used to bold a word. You need to place 2 of each symbol at the start and beginning of the word you wish to underline.
+3. <ins>"** or __"</ins> - The asterisk or the underscore marks can be used to bold a word. You need to place **2 of each symbol** at the __start and beginning of the word you wish to underline__. 
 
 # Meeting Notes
 
