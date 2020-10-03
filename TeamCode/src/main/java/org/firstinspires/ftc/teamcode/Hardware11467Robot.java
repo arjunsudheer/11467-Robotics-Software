@@ -57,6 +57,8 @@ public class Hardware11467Robot
     public DcMotor  rightForwardDrive  = null;
     public DcMotor  leftBackDrive   = null;
     public DcMotor  rightBackDrive  = null;
+    public Servo    clawServo = null;
+    public Servo    armServo = null;
 //    public DcMotor  leftArm     = null;
 //    public Servo    leftClaw    = null;
 //    public Servo    rightClaw   = null;
@@ -84,6 +86,9 @@ public class Hardware11467Robot
         rightForwardDrive = hwMap.get(DcMotor.class, "right_forward_drive");
         leftBackDrive  = hwMap.get(DcMotor.class, "left_back_drive");
         rightBackDrive = hwMap.get(DcMotor.class, "right_forward_drive");
+
+        clawServo = hwMap.get(Servo.class, "claw_servo");
+        armServo = hwMap.get(Servo.class, "arm_servo");
         //leftArm    = hwMap.get(DcMotor.class, "left_arm");
         leftForwardDrive.setDirection(DcMotor.Direction.FORWARD); // Set to REVERSE if using AndyMark motors
         rightForwardDrive.setDirection(DcMotor.Direction.REVERSE);// Set to FORWARD if using AndyMark motors
@@ -94,6 +99,9 @@ public class Hardware11467Robot
         rightForwardDrive.setPower(0);
         leftBackDrive.setPower(0);
         rightBackDrive.setPower(0);
+
+        clawServo.setPosition(0);
+        armServo.setPosition(-90);
         //leftArm.setPower(0);
 
         // Set all motors to run without encoders.
