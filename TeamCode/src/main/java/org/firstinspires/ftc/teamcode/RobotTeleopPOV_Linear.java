@@ -106,6 +106,19 @@ public class RobotTeleopPOV_Linear extends LinearOpMode {
             robot.leftBackDrive.setPower(v3);
             robot.rightBackDrive.setPower(v4);
 
+            //This code that will move the arm servo when the up and down arrows are pressed on the
+            //d-pad.
+            int armAngleCounter = -90;
+            if(gamepad2.dpad_up && armAngleCounter <= 86)
+                armAngleCounter = armAngleCounter + 4;
+            else if(gamepad2.dpad_down && armAngleCounter >= -86)
+                armAngleCounter = armAngleCounter - 4;
+            robot.armServo.setPosition(armAngleCounter);
+
+
+
+
+
             //
 
 //            drive = -gamepad1.left_stick_y;
