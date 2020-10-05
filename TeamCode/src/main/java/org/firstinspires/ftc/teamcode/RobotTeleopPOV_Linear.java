@@ -93,18 +93,19 @@ public class RobotTeleopPOV_Linear extends LinearOpMode {
             //Math.hypot. (It checks the translated distance of the gamepad's stick). The variable
             //robotAngle checks the angle the robot should be turned. The variable rightX is the
             //x position of right joystick.
+            //The diagonal check:
             double r = Math.hypot(gamepad1.left_stick_x, gamepad1.left_stick_y);
             double robotAngle = Math.atan2(gamepad1.left_stick_y, gamepad1.left_stick_x) - Math.PI / 4;
             double rightX = gamepad1.right_stick_x;
-            final double v1 = r * Math.cos(robotAngle) + rightX;
-            final double v2 = r * Math.sin(robotAngle) - rightX;
-            final double v3 = r * Math.sin(robotAngle) + rightX;
-            final double v4 = r * Math.cos(robotAngle) - rightX;
+            final double power1 = r * Math.cos(robotAngle) + rightX;
+            final double power2 = r * Math.sin(robotAngle) - rightX;
+            final double power3 = r * Math.sin(robotAngle) + rightX;
+            final double power4 = r * Math.cos(robotAngle) - rightX;
 
-            robot.leftForwardDrive.setPower(v1);
-            robot.rightForwardDrive.setPower(v2);
-            robot.leftBackDrive.setPower(v3);
-            robot.rightBackDrive.setPower(v4);
+            robot.leftForwardDrive.setPower(power1);
+            robot.rightForwardDrive.setPower(power2);
+            robot.leftBackDrive.setPower(power3);
+            robot.rightBackDrive.setPower(power4);
 
             //This code that will move the arm servo when the up and down arrows are pressed on the
             //d-pad.
@@ -114,9 +115,6 @@ public class RobotTeleopPOV_Linear extends LinearOpMode {
             else if(gamepad2.dpad_down && armAngleCounter >= -86)
                 armAngleCounter = armAngleCounter - 4;
             robot.armServo.setPosition(armAngleCounter);
-
-
-
 
 
             //
