@@ -115,11 +115,29 @@ public class RobotTeleopPOV_Linear extends LinearOpMode {
                 armAngleCounter = armAngleCounter - 4;
             robot.armServo.setPosition(armAngleCounter);
 
+            //This is the code that makes the claw servo open and close from the "x" button being clicked.
+            int count = 1;
+            if(gamepad2.x){
+                if(count % 2 == 0){
+                    //claw is closed, makes it open
+                    robot.clawServo.setPosition(-90);
+                }else{
+                    //claw is open, makes it closed
+                    robot.clawServo.setPosition(0);
+                }
+                count ++;
+            }
 
+            //Wheel based mechs (intake and shooting)
+            int ringCounter = 0;
+            if(gamepad2.left_trigger == 1){
+                //intake process
+                //THIS IS TENTATIVE, CHANGE BASED ON POSITION
+                robot.intakeWheel.setPower(-1);
+            }else if(gamepad2.right_trigger == 1){
+                //shooting process
 
-
-
-            //
+            }
 
 //            drive = -gamepad1.left_stick_y;
 //            turn  =  gamepad1.right_stick_x;
