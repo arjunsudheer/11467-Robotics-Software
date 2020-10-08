@@ -129,15 +129,27 @@ public class RobotTeleopPOV_Linear extends LinearOpMode {
             }
 
             //Wheel based mechs (intake and shooting)
+            //the number of rings that the robot is currently storing
             int ringCounter = 0;
             if(gamepad2.left_trigger == 1){
                 //intake process
-                //THIS IS TENTATIVE, CHANGE BASED ON POSITION
-                robot.intakeWheel.setPower(-1);
+                //clock-wise rotation to suck the ring into the robot body
+                robot.intakeWheel.setPower(1);
             }else if(gamepad2.right_trigger == 1){
                 //shooting process
+                /*boolean isClicked = false;
+                if(buttonIsClicked){
+                    isClicked = true;
+                }else if(isClicked){
+                    isClicked = false;
+                    count --;
+                    //code to shoot
+                }*/
 
+            }else{
+                robot.intakeWheel.setPower(0);
             }
+
 
 //            drive = -gamepad1.left_stick_y;
 //            turn  =  gamepad1.right_stick_x;
