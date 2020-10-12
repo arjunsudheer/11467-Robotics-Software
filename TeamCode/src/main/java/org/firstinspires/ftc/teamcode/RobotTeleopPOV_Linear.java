@@ -75,7 +75,7 @@ public class RobotTeleopPOV_Linear extends LinearOpMode {
         robot.init(hardwareMap);
 
         // Send telemetry message to signify robot waiting;
-        telemetry.addData("Say", "Hello Driver");    //
+        telemetry.addData("Say", "Go get them tiger");    //
         telemetry.update();
 
         // Wait for the game to start (driver presses PLAY)
