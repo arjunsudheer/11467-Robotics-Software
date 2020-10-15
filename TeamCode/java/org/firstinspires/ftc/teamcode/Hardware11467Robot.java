@@ -86,10 +86,10 @@ public class Hardware11467Robot
         hwMap = ahwMap;
 
         // Define and Initialize Motors
-        leftForwardDrive  = hwMap.get(DcMotor.class, "left_forward_drive");
-        rightForwardDrive = hwMap.get(DcMotor.class, "right_forward_drive");
-        leftBackDrive  = hwMap.get(DcMotor.class, "left_back_drive");
-        rightBackDrive = hwMap.get(DcMotor.class, "right_forward_drive");
+        leftForwardDrive  = hwMap.get(DcMotor.class, "LeftFront");
+        rightForwardDrive = hwMap.get(DcMotor.class, "RightFront");
+        leftBackDrive  = hwMap.get(DcMotor.class, "LeftRear");
+        rightBackDrive = hwMap.get(DcMotor.class, "RightRear");
 
         clawServo = hwMap.get(Servo.class, "claw_servo");
         armServo = hwMap.get(Servo.class, "arm_servo");
