@@ -58,7 +58,6 @@ import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
  */
 
 @Autonomous(name="Pushbot: Auto Drive By Time", group="Pushbot")
-@Disabled
 public class TestAutonomous_Linear extends LinearOpMode {
 
     /* Declare OpMode members. */
