@@ -66,7 +66,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../../TeamCode/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../../TeamCode/src/main/assets" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../../TeamCode/src/main/aidl" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../TeamCode/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../TeamCode/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../TeamCode/src/main/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../TeamCode/src/main/shaders" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../TeamCode/src/androidTest/res" type="java-test-resource" />
