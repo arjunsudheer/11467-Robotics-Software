@@ -58,11 +58,11 @@ public class Hardware11467Robot
     public DcMotor  rightForwardDrive  = null;
     public DcMotor  leftBackDrive   = null;
     public DcMotor  rightBackDrive  = null;
-    public Servo    clawServo = null;
-    public Servo    armServo = null;
-    public DcMotor  intakeWheel = null;
-    public DcMotor  shootingWheel = null;
-    public DcMotor  platformWheel = null;
+//    public Servo    clawServo = null;
+//    public Servo    armServo = null;
+//    public DcMotor  intakeWheel = null;
+//    public DcMotor  shootingWheel = null;
+//    public DcMotor  platformWheel = null;
 //    public DcMotor  leftArm     = null;
 //    public Servo    leftClaw    = null;
 //    public Servo    rightClaw   = null;
@@ -91,12 +91,12 @@ public class Hardware11467Robot
         leftBackDrive  = hwMap.get(DcMotor.class, "LeftRear");
         rightBackDrive = hwMap.get(DcMotor.class, "RightRear");
 
-        clawServo = hwMap.get(Servo.class, "claw_servo");
-        armServo = hwMap.get(Servo.class, "arm_servo");
-
-        intakeWheel = hwMap.get(DcMotor.class, "intake_wheel");
-        shootingWheel = hwMap.get(DcMotor.class, "shooting_wheel");
-        platformWheel = hwMap.get(DcMotor.class, "platform_wheel");
+//        clawServo = hwMap.get(Servo.class, "claw_servo");
+//        armServo = hwMap.get(Servo.class, "arm_servo");
+//
+//        intakeWheel = hwMap.get(DcMotor.class, "intake_wheel");
+//        shootingWheel = hwMap.get(DcMotor.class, "shooting_wheel");
+//        platformWheel = hwMap.get(DcMotor.class, "platform_wheel");
 
         //leftArm    = hwMap.get(DcMotor.class, "left_arm");
         leftForwardDrive.setDirection(DcMotor.Direction.REVERSE); // Set to REVERSE if using AndyMark motors
@@ -109,12 +109,12 @@ public class Hardware11467Robot
         leftBackDrive.setPower(0);
         rightBackDrive.setPower(0);
 
-        clawServo.setPosition(0);
-        armServo.setPosition(-90);
-
-        intakeWheel.setPower(0);
-        shootingWheel.setPower(0);
-        platformWheel.setPower(0);
+//        clawServo.setPosition(0);
+//        armServo.setPosition(-90);
+//
+//        intakeWheel.setPower(0);
+//        shootingWheel.setPower(0);
+//        platformWheel.setPower(0);
 
 
         //leftArm.setPower(0);
