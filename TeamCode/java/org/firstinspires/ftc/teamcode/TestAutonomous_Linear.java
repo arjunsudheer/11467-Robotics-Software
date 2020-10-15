@@ -92,7 +92,7 @@ public class TestAutonomous_Linear extends LinearOpMode {
         robot.leftBackDrive.setPower(FORWARD_SPEED);
         robot.leftForwardDrive.setPower(FORWARD_SPEED);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 2.0)) {
+        while (opModeIsActive() && (runtime.seconds() < 0.5)) {
             telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
@@ -103,7 +103,7 @@ public class TestAutonomous_Linear extends LinearOpMode {
         robot.rightForwardDrive.setPower(-TURN_SPEED);
         robot.rightBackDrive.setPower(-TURN_SPEED);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 2)) {
+        while (opModeIsActive() && (runtime.seconds() < 0.5)) {
             telemetry.addData("Path", "Leg 2: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
@@ -114,7 +114,7 @@ public class TestAutonomous_Linear extends LinearOpMode {
         robot.rightForwardDrive.setPower(TURN_SPEED);
         robot.rightBackDrive.setPower(TURN_SPEED);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 2)) {
+        while (opModeIsActive() && (runtime.seconds() < 0.5)) {
             telemetry.addData("Path", "Leg 2: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
@@ -125,7 +125,7 @@ public class TestAutonomous_Linear extends LinearOpMode {
         robot.rightBackDrive.setPower(-FORWARD_SPEED);
         robot.rightForwardDrive.setPower(-FORWARD_SPEED);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 2.0)) {
+        while (opModeIsActive() && (runtime.seconds() < 0.5)) {
             telemetry.addData("Path", "Leg 3: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
@@ -136,7 +136,7 @@ public class TestAutonomous_Linear extends LinearOpMode {
         robot.rightBackDrive.setPower(FORWARD_SPEED);
         robot.rightForwardDrive.setPower(-FORWARD_SPEED);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 2.0)) {
+        while (opModeIsActive() && (runtime.seconds() < 0.5)) {
             telemetry.addData("Path", "Leg 3: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
@@ -147,7 +147,7 @@ public class TestAutonomous_Linear extends LinearOpMode {
         robot.rightBackDrive.setPower(-FORWARD_SPEED);
         robot.rightForwardDrive.setPower(FORWARD_SPEED);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 2.0)) {
+        while (opModeIsActive() && (runtime.seconds() < 0.5)) {
             telemetry.addData("Path", "Leg 3: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
@@ -158,7 +158,7 @@ public class TestAutonomous_Linear extends LinearOpMode {
         //robot.rightBackDrive.setPower(-FORWARD_SPEED);
         robot.rightForwardDrive.setPower(FORWARD_SPEED);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 2.0)) {
+        while (opModeIsActive() && (runtime.seconds() < 0.5)) {
             telemetry.addData("Path", "Leg 3: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
@@ -169,7 +169,7 @@ public class TestAutonomous_Linear extends LinearOpMode {
         //robot.rightBackDrive.setPower(-FORWARD_SPEED);
         robot.rightForwardDrive.setPower(-FORWARD_SPEED);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 2.0)) {
+        while (opModeIsActive() && (runtime.seconds() < 0.5)) {
             telemetry.addData("Path", "Leg 3: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
@@ -180,7 +180,7 @@ public class TestAutonomous_Linear extends LinearOpMode {
         robot.rightBackDrive.setPower(-FORWARD_SPEED);
         //robot.rightForwardDrive.setPower(FORWARD_SPEED);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 2.0)) {
+        while (opModeIsActive() && (runtime.seconds() < 0.5)) {
             telemetry.addData("Path", "Leg 3: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
@@ -191,7 +191,7 @@ public class TestAutonomous_Linear extends LinearOpMode {
         robot.rightBackDrive.setPower(FORWARD_SPEED);
         //robot.rightForwardDrive.setPower(FORWARD_SPEED);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 2.0)) {
+        while (opModeIsActive() && (runtime.seconds() < 0.5)) {
             telemetry.addData("Path", "Leg 3: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
