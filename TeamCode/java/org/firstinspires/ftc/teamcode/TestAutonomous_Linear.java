@@ -97,6 +97,9 @@ public class TestAutonomous_Linear extends LinearOpMode {
             telemetry.update();
         }
 
+        sleep(1000);
+
+
         // Step 2:  Spin right for 2 seconds
         robot.leftForwardDrive.setPower(TURN_SPEED);
         robot.leftBackDrive.setPower(TURN_SPEED);
@@ -107,6 +110,8 @@ public class TestAutonomous_Linear extends LinearOpMode {
             telemetry.addData("Path", "Leg 2: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
+
+        sleep(1000);
 
         // Step 3:  Spin left for 2 seconds
         robot.leftForwardDrive.setPower(-TURN_SPEED);
@@ -119,6 +124,8 @@ public class TestAutonomous_Linear extends LinearOpMode {
             telemetry.update();
         }
 
+        sleep(1000);
+
         // Step 3:  Drive Backwards for 2 Second
         robot.leftBackDrive.setPower(-FORWARD_SPEED);
         robot.leftForwardDrive.setPower(-FORWARD_SPEED);
@@ -129,6 +136,8 @@ public class TestAutonomous_Linear extends LinearOpMode {
             telemetry.addData("Path", "Leg 3: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
+
+        sleep(1000);
 
         // Step 4: Straf Right for 2 seconds
         robot.leftBackDrive.setPower(-FORWARD_SPEED);
@@ -141,6 +150,8 @@ public class TestAutonomous_Linear extends LinearOpMode {
             telemetry.update();
         }
 
+        sleep(1000);
+
         // Step 5: Straf Left for 2 seconds
         robot.leftBackDrive.setPower(FORWARD_SPEED);
         robot.leftForwardDrive.setPower(-FORWARD_SPEED);
@@ -151,6 +162,8 @@ public class TestAutonomous_Linear extends LinearOpMode {
             telemetry.addData("Path", "Leg 3: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
+
+        sleep(1000);
 
         // Step 6: Move Diagonally Forward and Left for 2 seconds
         robot.leftBackDrive.setPower(FORWARD_SPEED);
@@ -163,6 +176,8 @@ public class TestAutonomous_Linear extends LinearOpMode {
             telemetry.update();
         }
 
+        sleep(1000);
+
         // Step 7: Move Diagonally Back and Right for 2 seconds
         robot.leftBackDrive.setPower(-FORWARD_SPEED);
         //robot.leftForwardDrive.setPower(-FORWARD_SPEED);
@@ -173,6 +188,8 @@ public class TestAutonomous_Linear extends LinearOpMode {
             telemetry.addData("Path", "Leg 3: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
+
+        sleep(1000);
 
         // Step 8: Move Diagonally Back and Left for 2 seconds
         //robot.leftBackDrive.setPower(FORWARD_SPEED);
@@ -185,6 +202,8 @@ public class TestAutonomous_Linear extends LinearOpMode {
             telemetry.update();
         }
 
+        sleep(1000);
+
         // Step 9: Move Diagonally Forward and Right for 2 seconds
         //robot.leftBackDrive.setPower(FORWARD_SPEED);
         robot.leftForwardDrive.setPower(FORWARD_SPEED);
@@ -195,6 +214,8 @@ public class TestAutonomous_Linear extends LinearOpMode {
             telemetry.addData("Path", "Leg 3: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
+
+        sleep(1000);
 
         // Step 4:  Stop and close the claw.
 //        robot.leftDrive.setPower(0);
