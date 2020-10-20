@@ -68,14 +68,25 @@ public class TestAutonomous_Linear extends LinearOpMode {
     static final double     FORWARD_SPEED = 0.6;
     static final double     TURN_SPEED    = 0.5;
 
+    public int toTicks(double inch){
+        double circumference = Math.PI * 4.0;
+        double rotations = inch / circumference;
+        return (int)(rotations * 1120);
+    }
+
     @Override
     public void runOpMode() {
-
         /*
          * Initialize the drive system variables.
          * The init() method of the hardware class does all the work here
          */
         robot.init(hardwareMap);
+
+        //make encoders for all wheels at 0
+        robot.leftForwardDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        robot.rightForwardDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        robot.leftBackDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        robot.rightBackDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
         // Send telemetry message to signify robot waiting;
         telemetry.addData("Status", "Ready to run");    //
@@ -84,20 +95,39 @@ public class TestAutonomous_Linear extends LinearOpMode {
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
 
+        /**
+         * Check to make sure that this encoder code is correct
+         **/
         // Step through each leg of the path, ensuring that the Auto mode has not been stopped along the way
-
+        //setting the target position for the encoders to run
+        robot.leftForwardDrive.setTargetPosition(toTicks(10));
+        robot.leftBackdDrive.setTargetPosition(toTicks(10));
+        robot.rightForwardDrive.setTargetPosition(toTicks(10));
+        robot.rightBackDrive.setTargetPosition(toTicks(10));
+        //setting the mode so the encoders run to the specified target
+        robot.leftForwardDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        robot.rightForwardDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        robot.leftBackDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        robot.rightBackDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         // Step 1:  Drive forward for 2 seconds
-        robot.rightBackDrive.setPower(FORWARD_SPEED);
+        /robot.rightBackDrive.setPower(FORWARD_SPEED);
         robot.rightForwardDrive.setPower(FORWARD_SPEED);
         robot.leftBackDrive.setPower(FORWARD_SPEED);
         robot.leftForwardDrive.setPower(FORWARD_SPEED);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 0.5)) {
+        while(opModeIsActive() && (leftForwardDrive.isBusy() || rightBackdDrive.isBusy() || rightForwardDrive.isBusy() || leftBackDrive.isBusy())){
+            telemetry.addData("Left Front Wheel", leftForwardDrive.getPosition());
+            telemetry.addData("Right Front Wheel", rightForwardDrive.getPosition());
+            telemetry.addData("RIght Back Wheel", rightBackDrive.getPosition());
+            telemetry.addData("Left Back Wheel", leftBackDrive.getPosition());
+            telemetry.update();
+        }
+        /*while (opModeIsActive() && (runtime.seconds() < 0.5)) {
             telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
 
-        sleep(1000);
+        sleep(1000);*/
 
 
         // Step 2:  Spin right for 2 seconds
