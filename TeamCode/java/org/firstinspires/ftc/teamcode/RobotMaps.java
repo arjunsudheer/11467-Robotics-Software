@@ -19,17 +19,16 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import org.firstinspires.ftc.teamcode.Hardware11467Robot;
 
-import java.lang.Math;
-
-/**
- * Double check this class for all methods and to see if this works correctly or not
- **/
 
 public class RobotMaps {
     //robot x position
     public int xPos;
     //robot y position
     public int yPos;
+    //robot shooting mech angle
+    public double shotAngle;
+    //robot angle
+    public double strafeAngle;
     //max distance of horizontal playing field
     private final double rightEdge = 1000;
     //max distance of vertical playing field
@@ -39,9 +38,11 @@ public class RobotMaps {
      * @param x X position of the robot
      * @param y Y position of the robot
      */
-    public RobotMaps(int x, int y){
+    public RobotMaps(int x, int y, double shotAngle, double strafeAngle){
         this.xPos = x;
         this.yPos = y;
+        this.shotAngle = shotAngle;
+        this.strafeAngle = strafeAngle;
     }
     /**
      * Method to tell if the robot is at the right edge
@@ -84,77 +85,35 @@ public class RobotMaps {
         return false;
     }
     /**
-     * To ticks method returns number of ticks based on inches of given distance
-     * @param inch the distance to travel
+     * Method to calculate the angle of elevation of the shooting mech
+     * @param x X position of the shot target
+     * @param height height of the shot target relative to the shooting mech
      */
-    public int toTicks(double inch){
-        double circumference = Math.PI * 4.0;
-        double rotations = inch / circumference;
-        return (int)(rotations * 1120);
+    private double calcShotDegrees(int x, int height) {
+        return Math.atan2(height, xPos - x);
     }
     /**
-     * Method to move the robot to a specific position on the playing field
-     * @param x X position of target
-     * @param y Y postiion of target
+     * Method to calculate the angle of strafing the robot
+     * @param x X position of the shot target
+     * @param y Y position of the shot target
      */
-    public void goTo(int x, int y){
-        //number of ticks to move in the x-axis direction
-        int xDistance = toTicks((Math.abs(xPos) - Math.abs(x)));
-        //number of ticks to move in the y-axis direction
-        int yDistance = toTicks(Math.abs(yPos) - Math.abs(y));
-        //run this twice once for horizontal movement, other for vertical movement
-        for(int i = 0; i < 2; i++) {
-            //make encoders for all wheels at 0
-            robot.leftForwardDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-            robot.rightForwardDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-            robot.leftBackDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-            robot.rightBackDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-            //depending on iteration, adjust the values of movement
-            switch (i) {
-                case 0:
-                    //setting the target position for the encoders to run
-                    robot.leftForwardDrive.setTargetPosition(Math.abs(xDistance));
-                    robot.leftBackdDrive.setTargetPosition(Math.abs(xDistance));
-                    robot.rightForwardDrive.setTargetPosition(Math.abs(xDistance));
-                    robot.rightBackDrive.setTargetPosition(Math.abs(xDistance));
-                    break;
-                case 1:
-                    //setting the target position for the encoders to run
-                    robot.leftForwardDrive.setTargetPosition(Math.abs(yDistance));
-                    robot.leftBackdDrive.setTargetPosition(Math.abs(yDistance));
-                    robot.rightForwardDrive.setTargetPosition(Math.abs(yDistance));
-                    robot.rightBackDrive.setTargetPosition(Math.abs(yDistance));
-                    break;
-            }
-            //setting the mode so the encoders run to the specified target
-            robot.leftForwardDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            robot.rightForwardDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            robot.leftBackDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            robot.rightBackDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            switch (i) {
-                //set the power accordingly based on whether or not the given position is greater
-                //or smaller than the current robot position
-                case 0:
-                    robot.leftForwardDrive.setPower(0.6 * (xDistance / Math.abs(xDistance)));
-                    robot.rightForwardDrive.setPower(-0.6 * (xDistance / Math.abs(xDistance)));
-                    robot.leftBackDrive.setPower(-0.6 * (xDistance / Math.abs(xDistance)));
-                    robot.rightBackDrive.setPower(0.6 * (xDistance / Math.abs(xDistance)));
-                    break;
-                case 1:
-                    robot.leftForwardDrive.setPower(0.6 * (yDistance / Math.abs(yDistance)));
-                    robot.rightForwardDrive.setPower(0.6 * (yDistance / Math.abs(yDistance)));
-                    robot.leftBackDrive.setPower(0.6 * (yDistance / Math.abs(yDistance)));
-                    robot.rightBackDrive.setPower(0.6 * (yDistance / Math.abs(yDistance)));
-                    break;
-            }
-        }
+    private double calcStrafeDegrees(int x, int y) {
+        return Math.atan2(yPos - y, xPos - x);
+    }
+    /**
+     * Method to convert degrees into ticks
+     */
+    private int toTicks(double degrees){
+        //replace the "1" with the appropriate calculation
+        return (int)1.2;
     }
     /**
      * Method call to shoot the rings
      */
     public void shootRings(int x, int y, int height){
-        //get into position for shooting
-        goTo(x, y);
+        //assigning the varibales to the vlaue given by the angle calculating methods
+        strafeAngle = calcStrafeDegrees(x, y);
+        shotAngle = calcShotDegrees(x, height);
         //instance of main class to access motors for turning
         Hardware11467Robot robot = new Hardware11467Robot();
         /*
